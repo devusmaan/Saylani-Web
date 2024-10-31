@@ -1,8 +1,18 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
 header {
     width: 100%;
-    height: 100px;
+    height: 80px;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0;
@@ -10,9 +20,13 @@ header {
     background-color: #ffffff;
     z-index: 10;
     border-bottom: 2px solid #a8a8a8;
+    padding: 0 20px;
 }
 
 .logo {
+    height: 50px;
+    display: flex;
+    align-items: center;
     margin-left: 10px;
 }
 
@@ -20,95 +34,123 @@ header {
     height: 20px;
 }
 
-header>nav>img {
-    width: 300px; 
+header nav img {
+    height: 40px;
+    width: auto;
+    max-width: 100%;
 }
 
-header>nav>ul {
+header nav ul {
     list-style-type: none;
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
 
-.nav-bar>ul>li a {
-    display: flex;
-    margin: 5px;
-    font-size: 20px;
+.nav-bar ul li a {
+    margin: 0 10px;
+    font-size: 18px;
     color: #99ca3c;
-    padding-right: 10px;
     text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
-.nav-bar>ul>li a:hover {
+.nav-bar ul li a:hover {
     text-decoration: underline;
 }
 
 .container-para {
     position: relative;
-    width: 66%;
-    margin: 0 auto;
+    width: 90%;
+    margin: 100px auto 0;
     display: flex;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 .container-para>div {
-    width: 28%;
+    flex: 1 1 calc(33.333% - 30px);
     padding: 2%;
+    box-sizing: border-box;
 }
 
+@media only screen and (max-width: 1200px) {
+    header {
+        height: 100px;
+        padding: 0 15px;
+    }
 
-@media only screen and (max-width: 1500px) and (min-width: 491px) {
-    .container-para {
-        width: 80%; 
+    .logo {
+        height: 75px;
+    }
+
+    .nav-bar ul li a {
+        font-size: 16px;
     }
 
     .container-para>div {
-        width: 45%;
+        flex: 1 1 calc(50% - 20px);
     }
 }
 
-
-@media only screen and (max-width: 490px) {
-    body {
-        padding: 0;
-        margin: 0;
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
     }
 
-
-    header>nav>img {
-        width: 80%; 
-        margin: 0 auto;
-    }
-
-    header>nav>ul {
-        list-style-type: none;
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
         width: 100%;
-        background-color: #99ca3c;
-        padding: 2%;
-        text-align: center;
-        display: block; 
     }
 
-    header>nav>ul>li {
-        padding: 1%;
-
-    }
-
-    .nav-bar>ul>li>a {
-        text-decoration: none;
-        color: #ffffff;
-        padding: 1%;
-        text-align: center;
-    }
-
-    header>nav>ul>li>a:hover {
-        background-color: #ffffff;
-        color: #99ca3c;
-
+    header nav ul li {
+        padding: 10px 0;
     }
 
     .container-para {
-        width: 100%; 
+        width: 90%;
+    }
+
+    .container-para>div {
+        flex: 1 1 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    header nav img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    header {
+        height: 280px;
+    }
+
+    header nav ul {
+        background-color: #99ca3c;
+        padding: 10px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-bar ul li a {
+        color: #ffffff;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .nav-bar ul li a:hover {
+        background-color: #ffffff;
+        color: #99ca3c;
+    }
+
+    .container-para {
+        width: 100%;
+        margin-top: 300px;
     }
 
     .container-para>div {
@@ -116,8 +158,14 @@ header>nav>ul {
         margin-bottom: 10px;
     }
 
-    .container-para>div>h2, .container-para>div>p {
-        margin-left: 10px; 
-        text-align: center; 
+    .logo {
+        margin-left: 20px;
+        height: 72px;
+    }
+
+    .container-para>div>h2,
+    .container-para>div>p {
+        text-align: center;
+        margin: 0 auto;
     }
 }
