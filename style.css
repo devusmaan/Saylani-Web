@@ -113,6 +113,7 @@ header nav ul {
 
     .container-para {
         width: 90%;
+        margin-top: 230px;
     }
 
     .container-para>div {
@@ -124,10 +125,6 @@ header nav ul {
     header nav img {
         width: 80%;
         margin: 0 auto;
-    }
-
-    header {
-        height: 280px;
     }
 
     header nav ul {
@@ -150,7 +147,7 @@ header nav ul {
 
     .container-para {
         width: 100%;
-        margin-top: 300px;
+        margin-top: 240px;
     }
 
     .container-para>div {
